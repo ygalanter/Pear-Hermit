@@ -1,0 +1,89 @@
+<svg>
+  
+  <!-- Analog clock definition -->
+  <defs>
+    <symbol id="clock-widget" class='clock-widget' type='clock-widget'
+      focusable='false' pointer-events='visible' system-events='all'
+      x='0' y='0' width='100%' height='100%' data-size='16'/>
+  </defs>
+
+  <rect id="bg" x="0" y="0" width="100%" height="100%"  />
+  <image id="bg_image" href="background.png" pointer-events="visible"  />
+  
+  <g transform="translate(42,-7) scale(0.88,0.88)  ">
+  <svg x="0" y="0" width="300" height="300">  
+   
+  
+  
+   <text id="date" class="date_text" x="50%+3" y="50%+85" pointer-events="visible"></text>
+  
+   <text id="tracker" class="tracker_text" x="50%" y="50%-60" pointer-events="visible"></text>
+   <image id="icon" x="50%-12" y="50%-45" width="24" height="24" pointer-events="visible"/> 
+  
+   <!-- Analog Clock -->
+   <g transform='translate(50%,50%)'>
+  
+      <use id="analog-watch-hands" href='#clock-widget' >
+
+
+        <!-- clock hands -->
+       
+
+   <!-- clock hands -->
+       
+
+          <g id="minute-hand">
+            <g id="minute-hand-opaque" display="none">
+              <line id="minute_inner" x1="0" y1="-131" x2="0" y2="-29" stroke-width="16" stroke-linecap="round" />
+              <line id="minute" x1="0" y1="-130" x2="0" y2="-30" stroke-width="14" stroke-linecap="round" />
+              <line id="minute_outer" x1="0" y1="-129" x2="0" y2="-31" stroke-width="10" stroke-linecap="round" />
+            </g>
+            
+            <g id="minute-hand-transparent">
+              <line id="minute-left" x1="-6" y1="-130" x2="-6" y2="-30" stroke-width="3"  />
+              <line id="minute-right" x1="6" y1="-130" x2="6" y2="-30" stroke-width="3"  />
+              <arc id="minute-bottom" x="-7" y="-37" width="14" height="14" arc-width="3" start-angle="90" sweep-angle="180" />
+              <arc id="minute-top" x="-7" y="-137" width="14" height="14" arc-width="3" start-angle="270" sweep-angle="180" />
+            </g>
+            
+             <line id="minute_root" x1="0" y1="-24" x2="0" y2="0" stroke-width="4" />
+           </g>
+
+          <g id="hour-hand">
+            
+            <g id="hour-hand-opaque" display="none">
+              <line id="hour_inner" x1="0" y1="-91" x2="0" y2="-29" stroke-width="16" stroke-linecap="round" />
+              <line id="hour" x1="0" y1="-90" x2="0" y2="-30" stroke-width="14" stroke-linecap="round" />
+              <line id="hour_outer" x1="0" y1="-89" x2="0" y2="-31" stroke-width="10" stroke-linecap="round" />
+            </g>
+            
+             <g id="hour-hand-transparent">
+              <line id="hour-left" x1="-6" y1="-90" x2="-6" y2="-30" stroke-width="3"  />
+              <line id="hour-right" x1="6" y1="-90" x2="6" y2="-30" stroke-width="3"  />
+              <arc id="hour-bottom" x="-7" y="-37" width="14" height="14" arc-width="3" start-angle="90" sweep-angle="180" />
+              <arc id="hour-top" x="-7" y="-97" width="14" height="14" arc-width="3" start-angle="270" sweep-angle="180" />
+            </g>
+            
+              <line id="hour_root" x1="0" y1="-24" x2="0" y2="0" stroke-width="4" />
+       
+          </g>
+
+    
+      </use>
+     
+          <g id="second-hand">
+              <line id="second" x1="0" y1="-130" x2="0" y2="23" stroke-width="2"  />
+          </g>
+     
+          <g id="dot">
+              <circle id="dot_outer" cx="0" cy="0" r="8" />
+              <circle id="dot" cx="0" cy="0" r="6" />
+              <circle id="dot_inner" cx="0" cy="0" r="3"  />
+          </g>
+     
+  
+     </g>
+    </svg>
+    </g>
+   
+</svg>

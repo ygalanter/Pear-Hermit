@@ -1,0 +1,33 @@
+{
+  "fitbit": {
+    "appUUID": "5826e7ed-6361-4e1b-a9a4-f9957473809b",
+    "appType": "clockface",
+    "appDisplayName": "Pear Hermit",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "meson",
+      "higgs"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Pear Hermit"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~1.0.0",
+    "@fitbit/sdk-cli": "~1.0.0"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  },
+  "dependencies": {
+    "fitbit-asap": "^1.0.5",
+    "fitbit-preferences": "^1.0.0"
+  }
+}

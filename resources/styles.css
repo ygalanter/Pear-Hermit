@@ -1,0 +1,16 @@
+.date_text {
+  font-size: 32;
+  font-family: Seville-Bold;
+  text-anchor: middle;
+  text-length: 32;
+  font-weight:bold;
+}
+
+
+.tracker_text {
+  font-size: 25;
+  font-family: Seville-Bold;
+  text-anchor: middle;
+  text-length: 32;
+  font-weight:bold;
+}
