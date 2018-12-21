@@ -93,9 +93,9 @@ clock.ontick = (evt) => {
   date.text = day;
 
   // *** begin getting digital time
-  let hours = dtlib.format1224hour(today.getHours());
-
+  let hours = today.getHours();
   let ampm = dtlib.timeFormat == dtlib.TIMEFORMAT_24H? '': ' ' + dtlib.getAmApm(hours);
+  let hours = dtlib.format1224hour(hours);
   
   if (dtlib.timeFormat == dtlib.TIMEFORMAT_24H) {
       hours = dtlib.zeroPad(hours);
