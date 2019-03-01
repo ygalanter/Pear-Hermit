@@ -11,7 +11,8 @@
     ],
     "buildTargets": [
       "meson",
-      "higgs"
+      "higgs",
+      "gemini"
     ],
     "i18n": {
       "en": {
@@ -20,7 +21,8 @@
     }
   },
   "devDependencies": {
-    "@fitbit/sdk": "~3.0.0",
+    "@fitbit/sdk": "~3.1.0-pre.3",
+    "@fitbit/sdk-build-targets": "file:./fitbit-sdk-build-targets-v1.2.1-gemini.tgz",
     "@fitbit/sdk-cli": "~1.5.0"
   },
   "scripts": {

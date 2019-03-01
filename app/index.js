@@ -46,7 +46,13 @@ const hour_hand_transparent_group = document.getElementById("hour-hand-transpare
 let heartrate = '...';
 
 // array of activities to change on user tapping
-const on_tap_activity = ['steps','activeMinutes','calories','distance','elevationGain','heartRate','battery', 'digitalTime']
+let on_tap_activity;
+if (today.adjusted.elevationGain === undefined) {
+  on_tap_activity = ['steps','activeMinutes','calories','distance','heartRate','battery', 'digitalTime']
+} else {
+  on_tap_activity = ['steps','activeMinutes','calories','distance','elevationGain','heartRate','battery', 'digitalTime']
+}
+
 
 // when user taps anything, advance to the next activity tracking
 let on_tap = function(e) {
@@ -269,7 +275,13 @@ asap.onmessage = data => {
           setHandsTransparency(preferences.transparent_hands);
           break;
      case "activity":
-          preferences[data.key] = JSON.parse(data.newValue).values[0].value;
+          let activity = JSON.parse(data.newValue).values[0].value;
+          
+          if (activity === "elevationGain" && today.adjusted.elevationGain === undefined) {
+            break;
+          }
+
+          preferences[data.key] = activity;
           setActivityIcon(preferences.activity);
           updateActivity(preferences.activity);
           break;
