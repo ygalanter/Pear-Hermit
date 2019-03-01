@@ -88,7 +88,7 @@ render() {
         
         
          <Select
-                label={`Digital display`}
+                label={`Tracker display`}
                 settingsKey="activity"
                 options={[
                   {name:"Step Count", value:"steps"},
@@ -102,6 +102,15 @@ render() {
                   
                 ]}
           />  
+
+          <Select
+                label={`Tracker text size`}
+                settingsKey="tracker_font_size"
+                options={[
+                  {name:"Normal", value:"25"},
+                  {name:"Large", value:"40"}
+                ]}
+          />            
         
          <Toggle settingsKey="transparent_hands" label="Transparent hour/minute hands" />  
         

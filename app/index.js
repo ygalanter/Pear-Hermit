@@ -93,9 +93,9 @@ clock.ontick = (evt) => {
   date.text = day;
 
   // *** begin getting digital time
-  let hours = dtlib.format1224hour(today.getHours());
-
+  let hours = today.getHours();
   let ampm = dtlib.timeFormat == dtlib.TIMEFORMAT_24H? '': ' ' + dtlib.getAmApm(hours);
+  let hours = dtlib.format1224hour(hours);
   
   if (dtlib.timeFormat == dtlib.TIMEFORMAT_24H) {
       hours = dtlib.zeroPad(hours);
@@ -117,6 +117,10 @@ if (preferences.transparent_hands == undefined) {
     preferences.hands_color = "red"
     preferences.activity = "steps";
     preferences.transparent_hands = false
+}
+
+if (preferences.tracker_font_size == undefined) {
+    preferences.tracker_font_size = 25;
 }
 
 
@@ -199,7 +203,7 @@ function updateActivity(activity) {
     case 'activeMinutes':
        let hours = Math.floor(today.adjusted[activity] / 60);          
        var minutes = today.adjusted[activity] % 60;
-       tracker.text = `${hours} h ${minutes} min`;
+       tracker.text = `${hours}:${dtlib.zeroPad(minutes)}`;
       break
     case 'digitalTime':
         tracker.text = digitalTime;
@@ -242,6 +246,7 @@ setHandsColor(preferences.hands_color);
 setHandsTransparency(preferences.transparent_hands);
 setActivityIcon(preferences.activity);
 updateActivity(preferences.activity);
+tracker.style.fontSize = preferences.tracker_font_size;
 
 
 asap.onmessage = data => {
@@ -267,6 +272,11 @@ asap.onmessage = data => {
           preferences[data.key] = JSON.parse(data.newValue).values[0].value;
           setActivityIcon(preferences.activity);
           updateActivity(preferences.activity);
+          break;
+
+      case "tracker_font_size":
+          preferences[data.key] = parseInt(JSON.parse(data.newValue).values[0].value);
+          tracker.style.fontSize = preferences.tracker_font_size;
           break;
   }
 }
