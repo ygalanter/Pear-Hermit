@@ -47,7 +47,7 @@ let heartrate = '...';
 
 // array of activities to change on user tapping
 let on_tap_activity;
-if (today.adjusted.elevationGain === undefined) {
+if (today.local.elevationGain === undefined) {
   on_tap_activity = ['steps','activeMinutes','calories','distance','heartRate','battery', 'digitalTime']
 } else {
   on_tap_activity = ['steps','activeMinutes','calories','distance','elevationGain','heartRate','battery', 'digitalTime']
@@ -277,7 +277,7 @@ asap.onmessage = data => {
      case "activity":
           let activity = JSON.parse(data.newValue).values[0].value;
           
-          if (activity === "elevationGain" && today.adjusted.elevationGain === undefined) {
+          if (activity === "elevationGain" && today.local.elevationGain === undefined) {
             break;
           }
 
