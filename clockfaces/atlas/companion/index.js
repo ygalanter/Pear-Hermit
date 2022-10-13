@@ -1,6 +1,6 @@
 // Import modules
 import { settingsStorage } from "settings";
-import { peerSocket } from '../common/fitbit-file-messaging'
+import { peerSocket } from 'fitbit-file-messaging'
 
 console.log("Companion Started");
 

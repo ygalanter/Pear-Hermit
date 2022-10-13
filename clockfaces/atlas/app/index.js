@@ -6,7 +6,7 @@ import { battery } from "power";
 import { today } from "user-activity";
 import { HeartRateSensor } from "heart-rate";
 import { preferences as user_settings } from "user-settings";
-import { peerSocket } from '../common/fitbit-file-messaging'
+import { peerSocket } from 'fitbit-file-messaging'
 import { preferences } from "fitbit-preferences";
 import dtlib from "../common/datetimelib";
 
